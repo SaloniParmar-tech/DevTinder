@@ -10,20 +10,14 @@ const app = express();
 //     res.send("HELLO and Namaste");
 // });
 
-app.get("/user",(req,res) =>{//REQUEST HANDLER
+// app.get("/user",(req,res) =>{//REQUEST HANDLER
+//     console.log(req.query)
+//     res.send({firstname:"Saloni", lastname:"Parmar"});
+// }); => in postman use /user?userId=101
+
+app.get("/user/:userId/:name/:password",(req,res) =>{//REQUEST HANDLER
+    console.log(req.params)
     res.send({firstname:"Saloni", lastname:"Parmar"});
-});
-
-app.post("/user",(req,res) =>{//REQUEST HANDLER
-    res.send("HELLO , Data successfully saved to the database");
-});
-
-app.delete("/user",(req,res) =>{//REQUEST HANDLER
-    res.send("HELLO, Deleted Successfully");
-});
-
-app.use("/hello",(req,res) =>{//REQUEST HANDLER
-    res.send("HELLO and Namaste");
 });
 
 app.listen(3000,()=>{
